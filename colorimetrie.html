@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurt Visuals — Colorimétrie</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#080808;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;}
+nav{display:flex;justify-content:center;align-items:center;padding:1.4rem 3rem;border-bottom:0.5px solid rgba(255,255,255,0.06);}
+.nav-links{display:flex;gap:2.5rem;}
+.nav-links a{font-size:11px;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-decoration:none;text-transform:uppercase;transition:color .3s;}
+.nav-links a:hover{color:#fff;}
+.page-header{padding:5rem 3rem 2rem;text-align:center;}
+.page-eyebrow{font-size:10px;letter-spacing:0.22em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:1rem;}
+.page-title{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;font-weight:300;font-size:44px;letter-spacing:-0.02em;color:#fff;}
+
+/* Bloc texte d'introduction */
+.intro{max-width:720px;margin:0 auto;padding:0 3rem 4rem;text-align:center;}
+.intro-body{font-size:15px;color:rgba(255,255,255,0.45);line-height:2;text-wrap:balance;}
+.intro-body br{display:block;content:"";margin-bottom:0.4rem;}
+.intro-body strong{color:rgba(255,255,255,0.75);font-weight:400;}
+
+/* Grille vidéos 2x2 */
+.grid{padding:1rem 6rem 8rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1400px;margin:0 auto;}
+.grid-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#0d0d0d;border:0.5px solid rgba(255,255,255,0.06);cursor:pointer;}
+.grid-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none;z-index:1;}
+
+/* Bouton lecture (affiché si l'autoplay échoue, ex. mobile) */
+.mobile-play-btn{
+  display:none;position:absolute;inset:0;
+  align-items:center;justify-content:center;
+  cursor:pointer;z-index:4;
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-play-btn .ring{
+  width:60px;height:60px;border-radius:50%;
+  border:0.5px solid rgba(255,255,255,0.5);
+  background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+}
+
+footer{padding:1.5rem 3rem;border-top:0.5px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;}
+.footer-text{font-size:10px;color:rgba(255,255,255,0.15);letter-spacing:0.1em;text-transform:uppercase;}
+
+@media (max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{gap:1.2rem;}
+  .nav-links a{font-size:10px;letter-spacing:0.1em;}
+  .page-header{padding:3rem 1.5rem 1.5rem;}
+  .page-title{font-size:32px;}
+  .intro{padding:0 1.5rem 2.5rem;}
+  .intro-body{font-size:14px;line-height:1.85;}
+  .intro-body br{margin-bottom:0.6rem;}
+  .grid{grid-template-columns:1fr;gap:1.5rem;padding:1rem 1.5rem 4rem;}
+  footer{padding:1rem 1.5rem;flex-direction:column;gap:0.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-links">
+    <a href="index.html#travaux">Travaux</a>
+    <a href="index.html#equipe">À propos</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">Nos travaux</p>
+  <h1 class="page-title">Colorimétrie</h1>
+</div>
+
+<div class="intro">
+  <p class="intro-body">
+    La couleur, c'est l'émotion avant les mots.<br>
+    Chaque projet possède sa propre température, sa lumière, son atmosphère, et notre travail est de la révéler.<br>
+    À travers notre <strong>colorimétrie signature</strong>, nous façonnons une identité visuelle cinématographique où chaque image transmet une intention.<br>
+    Un regard, une ambiance, une histoire qui reste.
+  </p>
+</div>
+
+<div class="grid">
+  <!-- Bloc 1 -->
+  <div class="grid-video" data-vid="v1" onclick="startVideo(event)">
+    <iframe class="grid-iframe" src="https://player.vimeo.com/video/1207123662?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&loop=1&muted=1&controls=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="mobile-play-btn" onclick="startVideo(event)">
+      <div class="ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    </div>
+  </div>
+  <!-- Bloc 2 -->
+  <div class="grid-video" data-vid="v2" onclick="startVideo(event)">
+    <iframe class="grid-iframe" src="https://player.vimeo.com/video/1207123660?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&loop=1&muted=1&controls=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="mobile-play-btn" onclick="startVideo(event)">
+      <div class="ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    </div>
+  </div>
+  <!-- Bloc 3 -->
+  <div class="grid-video" data-vid="v3" onclick="startVideo(event)">
+    <iframe class="grid-iframe" src="https://player.vimeo.com/video/1207123661?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&loop=1&muted=1&controls=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="mobile-play-btn" onclick="startVideo(event)">
+      <div class="ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    </div>
+  </div>
+  <!-- Bloc 4 -->
+  <div class="grid-video" data-vid="v4" onclick="startVideo(event)">
+    <iframe class="grid-iframe" src="https://player.vimeo.com/video/1207123659?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&loop=1&muted=1&controls=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="mobile-play-btn" onclick="startVideo(event)">
+      <div class="ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+var players = {};
+
+function getVid(container){ return container.getAttribute('data-vid'); }
+
+function showPlayButton(container){
+  var btn = container.querySelector('.mobile-play-btn');
+  if (btn) btn.style.display = 'flex';
+}
+function hidePlayButton(container){
+  var btn = container.querySelector('.mobile-play-btn');
+  if (btn) btn.style.display = 'none';
+}
+
+// Démarre une vidéo (attend qu'elle soit prête), puis appelle done()
+// quoi qu'il arrive pour enchaîner la suivante.
+function playOne(container, done){
+  var iframe = container.querySelector('.grid-iframe');
+  var vid = getVid(container);
+  var finished = false;
+  function next(){ if(!finished){ finished = true; done(); } }
+
+  if (typeof Vimeo === 'undefined' || !iframe){
+    showPlayButton(container); next(); return;
+  }
+  try {
+    var player = new Vimeo.Player(iframe);
+    players[vid] = player;
+    player.ready().then(function(){
+      return player.setMuted(true);
+    }).then(function(){
+      return player.play();
+    }).then(function(){
+      hidePlayButton(container); next();
+    }).catch(function(){
+      showPlayButton(container); next();
+    });
+  } catch(e){
+    showPlayButton(container); next();
+  }
+  // Sécurité : si Vimeo ne répond pas, on passe à la suivante après 3s.
+  setTimeout(next, 3000);
+}
+
+// Démarre les vidéos UNE PAR UNE (pas toutes en même temps) :
+// c'est ce qui règle les blocages aléatoires.
+function initSequential(containers, i){
+  i = i || 0;
+  if (i >= containers.length) return;
+  playOne(containers[i], function(){
+    setTimeout(function(){ initSequential(containers, i + 1); }, 250);
+  });
+}
+
+// Attend que l'API Vimeo (player.js) soit chargée avant d'initialiser.
+function whenVimeoReady(cb){
+  if (typeof Vimeo !== 'undefined'){ cb(); return; }
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    if (typeof Vimeo !== 'undefined'){ clearInterval(iv); cb(); }
+    else if (tries > 50){ clearInterval(iv); cb(); } // abandon après ~7,5s
+  }, 150);
+}
+
+function startVideo(event){
+  if (event) event.stopPropagation();
+  var container = event.currentTarget.closest('.grid-video');
+  var vid = getVid(container);
+  var player = players[vid];
+  if (!player) return;
+  // iPhone ne lit qu'une vidéo à la fois : on met les autres en pause.
+  document.querySelectorAll('.grid-video').forEach(function(other){
+    if (other !== container){
+      var op = players[getVid(other)];
+      if (op){ op.pause().catch(function(){}); showPlayButton(other); }
+    }
+  });
+  player.setMuted(true);
+  // play() appelé directement dans le clic = geste valide pour iOS.
+  player.play().then(function(){
+    hidePlayButton(container);
+  }).catch(function(){
+    showPlayButton(container);
+  });
+}
+
+window.addEventListener('load', function(){
+  whenVimeoReady(function(){
+    var containers = Array.prototype.slice.call(document.querySelectorAll('.grid-video'));
+    initSequential(containers, 0);
+  });
+});
+</script>
+
+<footer>
+  <span class="footer-text">© 2025 Kurt Visuals</span>
+  <span class="footer-text">France</span>
+</footer>
+
+</body>
+</html>
